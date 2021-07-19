@@ -1,20 +1,13 @@
 #!/usr/bin/env python3
-"""
-    Callable function
-"""
+""" multiplier function """
 from typing import Callable
 
 
 def make_multiplier(multiplier: float) -> Callable[[float], float]:
-    """
-        Args:
-            multiplier: factor
-        Return:
-            multiplication in float
-    """
+    """ float  """
 
     def x(f: float) -> float:
-        """ Get the second argument somthing like JS """
+        """ secont comp """
         return float(f * multiplier)
 
     return x
