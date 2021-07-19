@@ -1,17 +1,10 @@
 #!/usr/bin/env python3
-"""
-    Mixed lists
-"""
+""" lists """
 from typing import Union, List
 
 
 def sum_mixed_list(mxd_lst: List[Union[int, float]]) -> float:
-    """
-        Args:
-            mxd_lst: float-int numbers
-        Return:
-            Float base in int or float numbers
-    """
+    """ float numbers mixt """
 
     result: float = 0
 
