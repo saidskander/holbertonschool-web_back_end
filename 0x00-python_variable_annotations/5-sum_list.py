@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
+""" List of floats annotations """
+from typing import List
 
-sum_list = __import__('5-sum_list').sum_list
 
-floats = [3.14, 1.11, 2.22]
-floats_sum = sum_list(floats)
-print(floats_sum == sum(floats))
-print(sum_list.__annotations__)
-print("sum_list(floats) returns {} which is a {}".format(floats_sum, type(floats_sum)))
+def sum_list(input_list: List[float]) -> float:
+    """
+        Args:
+            input_list: float numbers
+        Return:
+            Sum of the float numbers
+    """
+
+    result: float = 0
+
+    for x in input_list:
+        result += x
+
+    return result
