@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
-"""
-Deletion-resilient hypermedia pagination
-"""
+"""Deletion-resilient hypermedia pagination"""
 
 import csv
+from typing import List, Dict
 import math
-from typing import List
-
 
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """ paginate a database of spesific popular Product* names """
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
@@ -18,8 +14,7 @@ class Server:
         self.__indexed_dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
-        """
+        """ dataset """
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
@@ -35,9 +30,23 @@ class Server:
             dataset = self.dataset()
             truncated_dataset = dataset[:1000]
             self.__indexed_dataset = {
-                i: dataset[i] for i in range(len(dataset))
+                x: dataset[x] for x in range(len(dataset))
             }
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-            pass
+        """ return a dictionary """
+        assert type(index) == int and type(page_size) == int
+        assert 0 <= index < len(self.indexed_dataset())
+        pages = []
+        next_index = index + page_size
+        for x in range(index, index + page_size):
+            if not self.indexed_dataset().get(x):
+                x += 1
+                next_index += 1
+            pages.append(self.indexed_dataset()[x])
+        return {'index': index,
+                'next_index': next_index,
+                'page_size': page_size,
+                'data': pages
+                }
