@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-class LRUBaseCache(BaseCaching):
+class LRUCache(BaseCaching):
     """ Create a class LRUCache that inherits from BaseCaching and is a caching system """
     def __init__(self):
         super().__init__()
