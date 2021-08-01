@@ -5,12 +5,12 @@ from collections import OrderedDict
 
 
 class LFUCache(BaseCaching):
-    """ class LFUCache that inherits from BaseCaching and is a caching system """
+    """ class LFUCache that inherits
+    from BaseCaching and is a caching system """
     def __init__(self):
         super().__init__()
         self.lru_cache = OrderedDict()
         self.lfu_cache = {}
-
 
     def put(self, key, item):
         """ dictionary """
