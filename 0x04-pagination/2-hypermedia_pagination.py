@@ -4,6 +4,7 @@ import csv
 from typing import List, Dict, Any
 import math
 
+
 def index_range(page, page_size):
     """ a tuple size index
     """
