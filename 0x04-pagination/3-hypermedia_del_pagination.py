@@ -5,6 +5,7 @@ import csv
 from typing import List, Dict
 import math
 
+
 class Server:
     """ paginate a database of spesific popular Product* names """
     DATA_FILE = "Popular_Baby_Names.csv"
