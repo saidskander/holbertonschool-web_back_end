@@ -69,9 +69,9 @@ def main():
                   f"phone={row[2]}; " + \
                   f"ssn={row[3]}; " + \
                   f"password={row[4]};" + \
-                  f"ip={row[5]};" + \
-                  f"last_login={row[6]};" + \
-                  f"user_agent={row[5]};"
+                  f"ip={row[5]}; " + \
+                  f"last_login={row[6]}; " + \
+                  f"user_agent={row[5]}; "
         print(message)
         log_record = logging.LogRecord("my_logger", logging.INFO,
                                        None, None, message, None, None)
