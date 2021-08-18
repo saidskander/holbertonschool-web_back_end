@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Create user, Find user, Update user """
+""" session, add, find, update, Create user, Find user, Update user """
 from user import Base, User
 from typing import TypeVar
 from sqlalchemy import create_engine
