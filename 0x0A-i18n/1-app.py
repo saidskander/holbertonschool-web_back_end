@@ -6,6 +6,7 @@ from flask_babel import Babel
 
 
 app = Flask(__name__)
+""" App Flask """
 babel = Babel(app)
 """ Babel, TIME zone/Locale """
 
