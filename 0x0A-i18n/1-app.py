@@ -9,18 +9,18 @@ babel = Babel(app)
 
 
 class Config(object):
-    """ config class """
+    """ class configuration """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
 
 app.config.from_object(Config)
-""" Use that class as config for Flask app """
+""" make this class as config default for Flask application """
 
 
 @app.route("/")
-def rout():
+def root():
     """Flask app"""
     return render_template('1-index.html')
 
