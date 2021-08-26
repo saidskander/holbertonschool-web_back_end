@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Flask app"""
 from flask import render_template, url_for, redirect
 from flask import Flask
 app = Flask(__name__)
@@ -6,6 +7,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
+    """Flask app"""
     return render_template('0-index.html')
 
 
