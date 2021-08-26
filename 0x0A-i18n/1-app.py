@@ -23,7 +23,7 @@ app.config.from_object(Config)
 
 
 @app.route("/")
-def root():
+def index():
     """Flask app"""
     return render_template('1-index.html')
 
