@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Flask app"""
-from flask import render_template, url_for, redirect
+from flask import render_template
 from flask import Flask
 app = Flask(__name__)
 
