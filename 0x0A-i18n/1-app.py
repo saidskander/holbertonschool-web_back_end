@@ -3,6 +3,8 @@
 from flask import render_template
 from flask import Flask
 from flask_babel import Babel
+
+
 app = Flask(__name__)
 babel = Babel(app)
 """ Babel, TIME zone/Locale """
