@@ -36,11 +36,11 @@ class TestAccessNestedMap(TestCase):
 class TestGetJson(TestCase):
     """ testing function """
     @parameterized.expand([
-        ("http://example.com", {"payload": True}),
-        ("http://holberton.io", {"payload": False})
+        (test_url="http://example.com", test_payload={"payload": True}),
+        (test_url="http://holberton.io", test_payload={"payload": False})
     ])
 
-    def TestGetJson(self, test_url, test_payload):
+    def TestGet_Json(self, test_url, test_payload):
         """ return output """
         res = Mock()
         res.json.return_value = test_payload
