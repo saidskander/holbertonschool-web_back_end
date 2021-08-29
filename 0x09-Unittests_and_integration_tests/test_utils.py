@@ -15,6 +15,7 @@ class TestAccessNestedMap(TestCase):
         ({"a": {"b": 2}}, ("a",), {'b': 2}),
         ({"a": {"b": 2}}, ("a", "b"), 2)
     ])
+
     def test_access_nested_map(self, map, path, expected_output):
         """ return correct output """
         real_output = access_nested_map(map, path)
@@ -24,12 +25,12 @@ class TestAccessNestedMap(TestCase):
         ({}, ("a",), 'a'),
         ({"a": 1}, ("a", "b"), 'b')
     ])
+
     def test_access_nested_map_exception(self, map, path, wrong_output):
         """ raise correct exception """
         with self.assertRaises(KeyError) as e:
             access_nested_map(map, path)
             self.assertEqual(wrong_output, e.exception)
-
 
 
 class TestGetJson(TestCase):
@@ -38,3 +39,13 @@ class TestGetJson(TestCase):
         ("http://example.com", {"payload": True}),
         ("http://holberton.io", {"payload": False})
     ])
+
+    def TestGetJson(self, test_url, test_payload):
+        """ return output """
+        res = Mock()
+        res.json.return_value = test_payload
+        with patch('requests.get', return_value=res):
+            real_response = get_json(test_url)
+            self.assertEqual(real_response, test_payload)
+            res.json.assert_called_once()
+
