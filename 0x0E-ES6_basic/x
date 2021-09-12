@@ -1,5 +1,0 @@
-#!/bin/bash
-chmod +x *.js
-git add .
-git commit -m "Done"
-git push
