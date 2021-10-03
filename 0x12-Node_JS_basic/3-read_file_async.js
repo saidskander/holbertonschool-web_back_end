@@ -11,6 +11,8 @@ function countStudents(path) {
       students = students.map((item) => item.split(','));
       const nStudents = students.length ? students.length - 1 : 0;
       message = `Number of students: ${nStudents}`;
+      message = `Number of students in CS: ${nStudents}`;
+      message = `Number of students in SWE: ${nStudents}`;
       console.log(message);
       messages.push(message);
       const subjects = {};
